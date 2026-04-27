@@ -1,63 +1,60 @@
-🦊 FoxKill: Advanced Network Access Controller
-FoxKill is a powerful Python-based security tool designed for network penetration testing and research. Utilizing ARP Spoofing techniques, it allows users to monitor and selectively disconnect devices from a local network.
 
-⚡ Key Features
-Nuclear Scan Mode: A high-intensity, 10-pass bruteforce discovery engine that detects every active device on the network, bypassing standard silent-host defenses.
+# 🦊 FoxKill
 
-Targeted Termination: Precision-kill functionality to disconnect specific IP addresses.
+Advanced ARP Spoofing tool to disconnect any device from your local network.
 
-Total Lockdown (Rage Mode): Instantly disconnect every device on the network (excluding the host) with a single command.
+## What is FoxKill?
 
-Auto-Restoration: Intelligent cleanup protocol that restores network connectivity for targets upon exit.
+**FoxKill** is a powerful network security tool designed to perform ARP Spoofing attacks. It allows you to scan your local network, identify active devices, and selectively or globally terminate their internet connection. Whether you want to kick a single intruder or perform a total network lockdown, FoxKill handles it with precision.
 
-Optimized Engine: Built to leverage high-performance hardware (like Ryzen 7) for near-instant packet injection.
+> **A Nuclear Scan feature has been added to detect even the most hidden devices.**
 
-⚠️ Legal Disclaimer
-FOR EDUCATIONAL PURPOSES ONLY. Accessing or disrupting networks without explicit permission is illegal and unethical. This tool is intended for authorized security auditing and educational research only. The developer assumes no liability for misuse.
+## Features
 
-🛠️ Installation & Setup
-Follow these steps to deploy FoxKill on your Kali Linux or any Debian-based system:
+In this tool, I've integrated advanced scanning and killing mechanisms for maximum control:
+* **Nuclear Scan:** 10x repetition bruteforce scanning to find every single device.
+* **Targeted Kill:** Disconnect a specific device by its ID.
+* **Rage Mode (Total Lockdown):** Disconnect every device on the network at once.
+* **Auto-Restore:** Automatically restores network connectivity upon exit (Ctrl+C).
+* **High Performance:** Optimized to run smoothly on high-end systems like Ryzen 7.
 
-1. Clone the Repository
-Download the source code from GitHub:
+## This Tool Tested On:
 
+* Kali Linux
+* Termux (Rooted)
+* Ubuntu
+* Parrot Security OS
+
+## Installing and Requirements
+
+This tool requires **Python 3**, **Scapy**, and **Nmap** for scanning. First, run the following command on your terminal to install system dependencies:
+
+```bash
+sudo apt-get update && sudo apt-get install nmap python3-pip -y
+Installing (Kali Linux):
 Bash
-git clone https://github.com/Cyberlatchofficial/FoxKill.git
-cd FoxKill
-2. Install Required Dependencies
-FoxKill requires scapy and colorama. Install them using the following command:
-
-Bash
+git clone [https://github.com/cyberlatchofficial-ctrl/foxkill.git](https://github.com/cyberlatchofficial-ctrl/foxkill.git)
+cd foxkill
 pip install -r requirements.txt --break-system-packages
-3. Install Network Tools
-Ensure nmap is installed for the Nuclear Scan feature to function at full capacity:
-
-Bash
-sudo apt update && sudo apt install nmap -y
-🚀 Execution Guide
-To launch the tool, you must have root privileges as it interacts directly with the network interface:
+Usage:
+To launch the tool, you must use root privileges:
 
 Bash
 sudo python3 foxkill.py
-Operation Steps:
-Initialization: The tool automatically detects your Gateway IP and local network range.
+Change Log:
+Version: 1.0: Initial Release
 
-Network Discovery: Wait for the Nuclear Scan to complete. It will display a table of all connected devices with their IP and MAC addresses.
+Added: Nuclear Scan (Bruteforce Device Detection).
 
-Select Target:
+Added: FoxEngine for stable packet injection.
 
-Enter 0 to activate Total Lockdown (Kill everyone).
+Added: Total Lockdown mode (ID 0).
 
-Enter a specific ID number from the list to kill a single target.
+Added: Colorized terminal interface for better UX.
 
-Cease Attack: Press Ctrl + C to stop the attack and automatically restore the targets' internet access.
+Important Notice
+Unauthorized use of this tool on networks you don't own is strictly prohibited.
 
-📂 Project Structure
-foxkill.py: The main user interface and scanning logic.
+For more videos, subscribe to www.youtube.com/@CyberLatch
 
-engine.py: The core attack engine and packet injection logic.
-
-requirements.txt: List of necessary Python libraries.
-
-👨‍💻 Developed By
-Cyberlatchofficial Mission: Zero Device Escape
+FoxKill is created to help in penetration testing and educational purposes. The developer is not responsible for any misuse or illegal activities.
