@@ -38,17 +38,23 @@ This tool requires **Python 3**, **Scapy**, and **Nmap**. First, install the sys
 1.
 sudo apt-get update && sudo apt-get install nmap python3-pip -y
 
+
 2.
 git clone https://github.com/cyberlatchofficial-ctrl/foxkill.git
+
 
 3.
 cd foxkill
 
+
 4.
 pip install -r requirements.txt --break-system-packages
 
+
 5.
 sudo python3 foxkill.py
+
+
 
 
 📜 Change Log:
